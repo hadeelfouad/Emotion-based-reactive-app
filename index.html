@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <title>EmoRec App</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px;"></div> -->
+                <div class="col-md-4">
+                    <div style="height:25em;">
+                        <strong>EMOTION TRACKING RESULTS</strong>
+                        <div id="results" style="word-wrap:break-word;"></div>
+                    </div>
+                    <div>
+                        <strong>DETECTOR LOG MSGS</strong>
+                    </div>
+                    <div id="logs"></div>
+                </div>
+            </div>
+            <div>
+                <button id="start" onclick="onStart()">Start</button>
+                <button id="stop" onclick="onStop()">Stop</button>
+                <button id="reset" onclick="onReset()">Reset</button>
+                <div id="image">
+                    <img src="" id="image__1" />
+                </div>
+            </div>
+            <div id="gifs">
+                <h1>First GIFs!</h1>
+            </div>
+        </div>
+
+        <script src="https://download.affectiva.com/js/3.2/affdex.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/slogans.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/videoAnalysis.js"></script>
+    </body>
+</html>
