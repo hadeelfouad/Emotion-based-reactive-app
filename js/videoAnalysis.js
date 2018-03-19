@@ -21,6 +21,7 @@ detector.detectAllAppearance();
 //Add a callback to notify when the detector is initialized and ready for runing.
 detector.addEventListener("onInitializeSuccess", function() {
   log('#logs', "The detector reports initialized");
+
   //Display canvas instead of video feed because we want to draw the feature points on it
   $("#face_video_canvas").css("display", "block");
   $("#face_video").css("display", "none");
@@ -36,12 +37,10 @@ function onStart() {
     $("#logs").html("");
     detector.start();
   }
-  // log('#logs', "Clicked the start button");
 }
 
 //function executes when the Stop button is pushed.
 function onStop() {
-  // log('#logs', "Clicked the stop button");
   if (detector && detector.isRunning) {
     detector.removeEventListener();
     detector.stop();
@@ -50,7 +49,6 @@ function onStop() {
 
 //function executes when the Reset button is pushed.
 function onReset() {
-  // log('#logs', "Clicked the reset button");
   if (detector && detector.isRunning) {
     detector.reset();
 
@@ -70,7 +68,6 @@ detector.addEventListener("onWebcamConnectFailure", function() {
 
 //Add a callback to notify when detector is stopped
 detector.addEventListener("onStopSuccess", function() {
-  // log('#logs', "The detector reports stopped");
   $("#results").html("");
 });
 
@@ -81,52 +78,39 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image, timest
   if (Date.now() - lastMove > 5000) {
     $('#results').html("");
     log('#results', "Detecting...");
-    // log('#results', "Timestamp: " + timestamp.toFixed(2));
-    // log('#results', "Number of faces found: " + faces.length);
     if (faces.length > 0) {
-      // log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
-      log('#results', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
+      // intended typo in order not to show logs to the user
+      log('#resultss', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
         if (key == "joy" && Number(val) > 60) {
           renderSlogan("happy");
           lastMove = Date.now();
-          console.log("smile");
         }
         else if (key == "sadness" && Number(val) > 30) {
           renderSlogan("funny");
           lastMove = Date.now();
-          console.log("sadness");
         }
         else if (key == "disgust" && Number(val) > 60) {
           renderSlogan("disgust");
           lastMove = Date.now();
-          console.log("disgust");
         }
         else if (key == "contempt" && Number(val) > 60) {
           renderSlogan("contempt");
           lastMove = Date.now();
-          console.log("contempt");
         }
         else if (key == "anger" && Number(val) > 60) {
           renderSlogan("anger");
           lastMove = Date.now();
-          console.log("anger");
         }
         else if (key == "fear" && Number(val) > 60) {
           renderSlogan("fear");
           lastMove = Date.now();
-          console.log("fear");
         }
         else if (key == "surprise" && Number(val) > 60) {
           renderSlogan("surprise");
           lastMove = Date.now();
-          console.log("surprise");
         }
         return val.toFixed ? Number(val.toFixed(0)) : val;
       }));
-      // log('#results', "Expressions: " + JSON.stringify(faces[0].expressions, function(key, val) {
-      //   return val.toFixed ? Number(val.toFixed(0)) : val;
-      // }));
-      // log('#results', "Emoji: " + faces[0].emojis.dominantEmoji);
       drawFeaturePoints(image, faces[0].featurePoints);
     }
   }

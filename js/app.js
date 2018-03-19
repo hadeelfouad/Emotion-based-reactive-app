@@ -19,9 +19,7 @@ renderSlogan = function(searchKey) {
         case "surprise":
             slogansIndex = 6; break;
     }
-
-    console.log("SLOGANS DATA: ", slogansData);
-    console.log("SLOGANS DATA SK: ", slogansData[slogansIndex][searchKey]);
+    
     $('#results').html("");
     log('#results', "SLOGANS --> " + slogansData[slogansIndex][searchKey][0]);
 }
