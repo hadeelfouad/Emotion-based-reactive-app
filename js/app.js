@@ -4,7 +4,7 @@ let slogansIndex = 0;
 renderGIF = function(searchKey) {
     
     let gifs;
-    let xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + searchKey + "&api_key=tAhiCMj64bRyq1EzaXsy0eyj6Om2QidE&limit=35");
+    // let xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + searchKey + "&api_key=tAhiCMj64bRyq1EzaXsy0eyj6Om2QidE&limit=35");
     
     switch(searchKey) {
         case "happy":
@@ -23,20 +23,25 @@ renderGIF = function(searchKey) {
             slogansIndex = 6; break;
     }
 
-    xhr.done(function(data) {
-        gifs = data;
-        index = Math.floor((Math.random() * 35));
+    console.log("SLOGANS DATA: ", slogansData);
+    console.log("SLOGANS DATA SK: ", slogansData[slogansIndex][searchKey]);
+    $('#results').html("");
+    log('#results', "SLOGANS --> " + slogansData[slogansIndex][searchKey][0]);
 
-        let img = document.createElement("img");
-        img.src = gifs.data[index].images.original.url;
-        img.width = 640;
-        img.height = 480;
-        let mainDiv = document.getElementById("gifs");
-        emptyGIF();
-        mainDiv.appendChild(img);
+    // xhr.done(function(data) {
+    //     gifs = data;
+    //     index = Math.floor((Math.random() * 35));
+
+    //     let img = document.createElement("img");
+    //     img.src = gifs.data[index].images.original.url;
+    //     img.width = 640;
+    //     img.height = 480;
+    //     let mainDiv = document.getElementById("gifs");
+    //     emptyGIF();
+    //     mainDiv.appendChild(img);
         
         
-    });
+    // });
 }
 
 emptyGIF = function() {

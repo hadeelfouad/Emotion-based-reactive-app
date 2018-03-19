@@ -78,12 +78,13 @@ detector.addEventListener("onStopSuccess", function() {
 //The faces object contains the list of the faces detected in an image.
 //Faces object contains probabilities for all the different expressions, emotions and appearance metrics
 detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) {
-  if (Date.now() - lastMove > 7500) {
+  if (Date.now() - lastMove > 5000) {
     $('#results').html("");
-    log('#results', "Timestamp: " + timestamp.toFixed(2));
-    log('#results', "Number of faces found: " + faces.length);
+    log('#results', "Detecting...");
+    // log('#results', "Timestamp: " + timestamp.toFixed(2));
+    // log('#results', "Number of faces found: " + faces.length);
     if (faces.length > 0) {
-      log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
+      // log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
       log('#results', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
         if (key == "joy" && Number(val) > 60) {
           renderGIF("happy");
@@ -122,10 +123,10 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image, timest
         }
         return val.toFixed ? Number(val.toFixed(0)) : val;
       }));
-      log('#results', "Expressions: " + JSON.stringify(faces[0].expressions, function(key, val) {
-        return val.toFixed ? Number(val.toFixed(0)) : val;
-      }));
-      log('#results', "Emoji: " + faces[0].emojis.dominantEmoji);
+      // log('#results', "Expressions: " + JSON.stringify(faces[0].expressions, function(key, val) {
+      //   return val.toFixed ? Number(val.toFixed(0)) : val;
+      // }));
+      // log('#results', "Emoji: " + faces[0].emojis.dominantEmoji);
       drawFeaturePoints(image, faces[0].featurePoints);
     }
   }

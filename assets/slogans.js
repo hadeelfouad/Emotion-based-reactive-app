@@ -1,5 +1,6 @@
 const slogans =  [
     {
+        // on detecting a happy face
         "happy": [
             "Keep smiling!",
             "That's another smile!",
@@ -10,6 +11,7 @@ const slogans =  [
         ]
     },
     {
+        // on detecting a sad face
         "funny": [
             "Why so serious?",
             "Smile, smile, smile!",
@@ -29,6 +31,8 @@ const slogans =  [
         "fear": []
     },
     {
-        "surprise": []
+        "surprise": [
+            "Surprised!"
+        ]
     }
 ]
