@@ -31,6 +31,7 @@ const slogans =  [
         "fear": []
     },
     {
+        // on detecting a surprised face
         "surprise": [
             "Surprised!"
         ]

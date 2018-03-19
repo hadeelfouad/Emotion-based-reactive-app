@@ -36,12 +36,12 @@ function onStart() {
     $("#logs").html("");
     detector.start();
   }
-  log('#logs', "Clicked the start button");
+  // log('#logs', "Clicked the start button");
 }
 
 //function executes when the Stop button is pushed.
 function onStop() {
-  log('#logs', "Clicked the stop button");
+  // log('#logs', "Clicked the stop button");
   if (detector && detector.isRunning) {
     detector.removeEventListener();
     detector.stop();
@@ -50,7 +50,7 @@ function onStop() {
 
 //function executes when the Reset button is pushed.
 function onReset() {
-  log('#logs', "Clicked the reset button");
+  // log('#logs', "Clicked the reset button");
   if (detector && detector.isRunning) {
     detector.reset();
 
@@ -70,7 +70,7 @@ detector.addEventListener("onWebcamConnectFailure", function() {
 
 //Add a callback to notify when detector is stopped
 detector.addEventListener("onStopSuccess", function() {
-  log('#logs', "The detector reports stopped");
+  // log('#logs', "The detector reports stopped");
   $("#results").html("");
 });
 
@@ -87,37 +87,37 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image, timest
       // log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
       log('#results', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
         if (key == "joy" && Number(val) > 60) {
-          renderGIF("happy");
+          renderSlogan("happy");
           lastMove = Date.now();
           console.log("smile");
         }
         else if (key == "sadness" && Number(val) > 30) {
-          renderGIF("funny");
+          renderSlogan("funny");
           lastMove = Date.now();
           console.log("sadness");
         }
         else if (key == "disgust" && Number(val) > 60) {
-          renderGIF("disgust");
+          renderSlogan("disgust");
           lastMove = Date.now();
           console.log("disgust");
         }
         else if (key == "contempt" && Number(val) > 60) {
-          renderGIF("contempt");
+          renderSlogan("contempt");
           lastMove = Date.now();
           console.log("contempt");
         }
         else if (key == "anger" && Number(val) > 60) {
-          renderGIF("anger");
+          renderSlogan("anger");
           lastMove = Date.now();
           console.log("anger");
         }
         else if (key == "fear" && Number(val) > 60) {
-          renderGIF("fear");
+          renderSlogan("fear");
           lastMove = Date.now();
           console.log("fear");
         }
         else if (key == "surprise" && Number(val) > 60) {
-          renderGIF("surprise");
+          renderSlogan("surprise");
           lastMove = Date.now();
           console.log("surprise");
         }

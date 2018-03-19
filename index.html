@@ -2,33 +2,30 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
         <title>EmoRec App</title>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px;"></div>
-                <div class="col-md-4">
-                    <div style="height:25em;">
-                        <strong>EMOTION TRACKING RESULTS</strong>
-                        <div id="results" style="word-wrap:break-word;" hidden></div>
+        <div class="container-fluid main__container-fluid">
+            <div class="main__container">
+                <div class="row main__sub-container">
+                    <div class="col-md-7 camera__frame" id="affdex_elements"></div>
+                    <div class="col-md-5">
+                        <div class="results__container">
+                            <strong class="results__title">EMOTION TRACKING RESULTS</strong>
+                            <div id="results" style="word-wrap: break-word;"></div>
+                        </div>
+                        <div class="logs__container">
+                            <strong class="logs__title">DETECTOR STATUS</strong>
+                            <div id="logs"></div>
+                        </div>
                     </div>
-                    <div>
-                        <strong>DETECTOR LOG MSGS</strong>
-                    </div>
-                    <div id="logs"></div>
                 </div>
-            </div>
-            <div>
-                <button id="start" onclick="onStart()">Start</button>
-                <button id="stop" onclick="onStop()">Stop</button>
-                <button id="reset" onclick="onReset()">Reset</button>
-                <div id="image">
-                    <img src="" id="image__1" />
+                <div class="row btn__container">
+                    <button id="start" onclick="onStart()" class="btn btn-success btn__template">Start</button>
+                    <button id="stop" onclick="onStop()" class="btn btn-danger btn__template">Stop</button>
+                    <button id="reset" onclick="onReset()" class="btn btn-warning btn__template">Reset</button>
                 </div>
-            </div>
-            <div id="gifs">
-                <h1>First GIFs!</h1>
             </div>
         </div>
 
