@@ -20,7 +20,7 @@
 }
 
 .btn__container {
-    margin: 5% 0% 0% 21%;
+    margin-top: 2%;
     text-align: center;
 }
 
@@ -41,13 +41,21 @@
 }
 
 .results__container {
-    margin-top: 10%;
+    margin-top: 35%;
 }
 
-#results, #logs {
+#logs {
     font-size: 1.25em;
 }
 
 .logs__container {
     margin-top: 10%;
+}
+
+#results {
+    color: #ffffff;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2%;
 }

@@ -2,33 +2,34 @@ const slogans =  [
     {
         // on detecting a happy face
         "happy": [
-            "Keep smiling!",
-            "That's another smile!",
-            "You'll like that",
-            "Another great smile",
-            "Have an awesome day",
-            "Keep being joyful"
+            "Keep smiling!"
         ]
     },
     {
         // on detecting a sad face
         "funny": [
-            "Why so serious?",
-            "Smile, smile, smile!",
-            "Be happy, always"
+            "Why so serious?"
         ]
     },
     {
-        "disgust": []
+        "disgust": [
+            "Disgusted"
+        ]
     },
     {
-        "contempt": []
+        "contempt": [
+            "Contempted"
+        ]
     },
     {
-        "anger": []
+        "anger": [
+            "Angry"
+        ]
     },
     {
-        "fear": []
+        "fear": [
+            "Afraid"
+        ]
     },
     {
         // on detecting a surprised face

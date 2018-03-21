@@ -10,20 +10,16 @@
             <div class="main__container">
                 <div class="row main__sub-container">
                     <div class="col-md-7 camera__frame" id="affdex_elements"></div>
-                    <div class="col-md-5">
-                        <div class="results__container">
-                            <strong class="results__title">EMOTION TRACKING RESULTS</strong>
-                            <div id="results" style="word-wrap: break-word;"></div>
-                        </div>
-                        <div class="logs__container">
-                            <strong class="logs__title">DETECTOR STATUS</strong>
-                            <div id="logs"></div>
-                        </div>
-                    </div>
                 </div>
-                <div class="row btn__container">
-                    <button id="start" onclick="onStart()" class="btn btn-success btn__template">Start</button>
-                    <button id="stop" onclick="onStop()" class="btn btn-danger btn__template">Stop</button>
+                <div class="row">
+                    <div class="col-md-7" id="results"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 btn__container">
+                        <button id="start" onclick="onStart()" class="btn btn-success btn__template">Start</button>
+                        <button id="stop" onclick="onStop()" class="btn btn-danger btn__template">Stop</button>
+                    </div>
+                    <!-- might be needed later on -->
                     <!-- <button id="reset" onclick="onReset()" class="btn btn-warning btn__template">Reset</button> -->
                 </div>
             </div>

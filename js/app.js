@@ -21,5 +21,5 @@ renderSlogan = function(searchKey) {
     }
     
     $('#results').html("");
-    log('#results', "SLOGANS --> " + slogansData[slogansIndex][searchKey][0]);
+    log('#results', slogansData[slogansIndex][searchKey][0]);
 }

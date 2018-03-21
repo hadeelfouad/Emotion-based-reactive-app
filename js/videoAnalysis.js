@@ -28,7 +28,7 @@ detector.addEventListener("onInitializeSuccess", function() {
 });
 
 function log(node_name, msg) {
-  $(node_name).append("<span>" + msg + "</span><br />")
+  $(node_name).append(msg);
 }
 
 //function executes when Start button is pushed.
