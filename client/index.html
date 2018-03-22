@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <title>EmoRec App</title>
+    </head>
+    <body>
+        <div class="container-fluid main__container-fluid">
+            <div class="main__container">
+                <div class="row main__sub-container">
+                    <div class="col-md-7 camera__frame" id="affdex_elements"></div>
+                    <div class="col-md-4 img__container">
+                        <img src="assets/images/gamechangers.png" width="500" height="380" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7" id="results"></div>
+                    <div class="col-md-5 input__form text-center">
+                        <input type="text" class="input-form-field form-control" />
+                        <br>
+                        <button id="submit__email" onclick="submitEmail()" class="btn btn-warning btn__template">Register</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 btn__container">
+                        <button id="start" onclick="onStart()" class="btn btn-success btn__template">Start</button>
+                        <button id="stop" onclick="onStop()" class="btn btn-danger btn__template">Stop</button>
+                        <!-- <button id="reset" onclick="onReset()" class="btn btn-warning btn__template">Reset</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="//cdn.jsdelivr.net/npm/pouchdb@6.4.3/dist/pouchdb.min.js"></script>
+        <script src="https://download.affectiva.com/js/3.2/affdex.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/slogans.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/videoAnalysis.js"></script>
+    </body>
+</html>
