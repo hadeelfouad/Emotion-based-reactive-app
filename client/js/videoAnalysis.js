@@ -37,6 +37,7 @@ function onStart() {
     $("#logs").html("");
     detector.start();
   }
+  $(".btn__container").html("");
 }
 
 //function executes when the Stop button is pushed.

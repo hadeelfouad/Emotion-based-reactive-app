@@ -1,6 +1,15 @@
 let slogansData = slogans;
 let slogansIndex = 0;
 
+$(document).ready(function() {
+    $("#success-alert").hide();
+    $("#failure-alert").hide();
+    $('.input-form-field').onScreenKeyboard({
+        rewireTab : true,
+        leftPosition: '50%'
+    });
+});
+
 renderSlogan = function(searchKey) {
     
     switch(searchKey) {
@@ -25,14 +34,30 @@ renderSlogan = function(searchKey) {
 }
 
 submitEmail = function() {
-    console.log(document.getElementsByClassName('input-form-field')[0].value);
+
+    var email = document.getElementsByClassName('input-form-field')[0].value;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(String(email).toLowerCase())) {
+        console.log("VALID");
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#success-alert").slideUp(500);
+        });
+    }
+    else {
+        console.log("NOT VALID");
+        $("#failure-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#failure-alert").slideUp(500);
+        });
+        return;
+    }
+
+    console.log(email);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:3000/", true);
     xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send(JSON.stringify({ "email": document.getElementsByClassName('input-form-field')[0].value }));
+    xhr.send(JSON.stringify({ "email": email }));
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.responseText);
             console.log("RESPONSE TEXT --> ", xhr.responseText);
         }
     }
