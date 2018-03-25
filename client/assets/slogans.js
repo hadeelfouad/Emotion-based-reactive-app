@@ -1,40 +1,37 @@
 const slogans =  [
     {
-        // on detecting a happy face
         "happy": [
-            "Keep smiling!"
+            "I like your vibe! To infinity and beyond!"
         ]
     },
     {
-        // on detecting a sad face
         "funny": [
-            "Why so serious?"
+            "Why so serious? Lighten up and start innovating"
         ]
     },
     {
         "disgust": [
-            "Disgusted"
+            "Hasta la vista, baby! No need for disgust"
         ]
     },
     {
         "contempt": [
-            "Contempted"
+            "Let's put a smile on this face"
         ]
     },
     {
         "anger": [
-            "Angry"
+            "You talkin' to me?!"
         ]
     },
     {
         "fear": [
-            "Afraid"
+            "No need to be afraid! I am only a machine"
         ]
     },
     {
-        // on detecting a surprised face
         "surprise": [
-            "Surprised!"
+            "Surprised! Show me the money!"
         ]
     }
 ]
