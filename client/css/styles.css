@@ -40,8 +40,11 @@
     font-weight: bold;
 }
 
-.results__container {
-    /* margin-top: 35%; */
+.main__container-title {
+    font-size: 2em;
+    color: green;
+    font-weight: bold;
+    padding-top: 1%;
 }
 
 #logs {
