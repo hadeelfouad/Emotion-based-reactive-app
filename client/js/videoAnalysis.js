@@ -5,7 +5,6 @@ let divRoot = $("#affdex_elements")[0];
 let width = 640;
 let height = 480;
 let faceMode = affdex.FaceDetectorMode.LARGE_FACES;
-let smiling = false;
 let lastMove = Date.now();
 
 //Construct a CameraDetector and specify the image width / height and face detector mode.
