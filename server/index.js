@@ -10,11 +10,12 @@ var globalDB;
 app.use(cors());
 app.use(bodyParser.json())
 
+// listening on port 3000
 app.listen(3000, function() {
     console.log("Listening on port 3000..");
 });
 
-
+// testing connection to the db
 mongoose.connect(mongoDB, function(err, db) {
     if (err) {
         console.log("Error --> "+ err);
@@ -25,6 +26,7 @@ mongoose.connect(mongoDB, function(err, db) {
     }
 });
 
+// endpoint for inserting a user email to the db
 app.post("/", function(req, res) {
     var user = {
         email: req.body.email
@@ -40,7 +42,7 @@ app.post("/", function(req, res) {
 });
 
 
-// modify this endpoint to get a specific email
+// endpoint for checking the existence of a user email (before saving the newly entered email)
 app.post("/user", function(req, res) {
     globalDB.collection('users').find({ email: req.body.email }).toArray(function(err, result) {
         if (!err) {

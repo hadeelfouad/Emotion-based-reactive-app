@@ -11,18 +11,21 @@
             <div class="main__container">
                 <div class="row">
                     <div class="col-md-1"></div>
+                    <!-- Main title -->
                     <div class="col-md-10 text-center main__container-title">
                         Recognize your emotion, and subscribe in GameChangers!
                     </div>
                 </div>
                 <div class="row main__sub-container">
                     <div class="col-md-7">
+                        <!-- Main canvas, on which the user can see his face with landmarks on his being marked -->
                         <div class="camera__frame" id="affdex_elements"></div>
                         <div class="row">
                             <div class="col-md-11" id="results"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-2"></div>
+                            <!-- Controllers for starting and stopping the emotion recognition -->
                             <div class="col-md-6 btn__container ">
                                 <button id="start" onclick="onStart()" class="btn btn-success btn__template">Start</button>
                                 <button id="stop" onclick="onStop()" class="btn btn-danger btn__template">Stop</button>
@@ -30,9 +33,11 @@
                         </div>
                     </div>
                     <div class="col-md-5 img__container">
+                        <!-- GameChangers logo -->
                         <div class="row">
                             <img src="assets/images/gamechangers_1.png" width="400" height="380" class="gamechangers__logo" />
                         </div>
+                        <!-- Status informing for email entering -->
                         <div class="row">
                             <div class=" input__form text-center">
                                 <input type="text" class="input-form-field form-control" placeholder="Enter Email" />

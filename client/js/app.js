@@ -1,6 +1,8 @@
 let slogansData = slogans;
 let slogansIndex = 0;
 
+
+// customized styling features for the on-screen keyboard
 $(document).ready(function() {
     $("#success-alert").hide();
     $("#failure-alert").hide();
@@ -11,6 +13,7 @@ $(document).ready(function() {
     });
 });
 
+// rendering slogans according to the identified emotion
 renderSlogan = function(searchKey) {
     
     switch(searchKey) {
@@ -34,25 +37,28 @@ renderSlogan = function(searchKey) {
     log('#results', slogansData[slogansIndex][searchKey][0]);
 }
 
+// showing the success message
 showSuccessStatus = function() {
     $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
         $("#success-alert").slideUp(500);
     });
 }
 
-
+// showing the invalid email message
 showFailureStatus = function() {
     $("#failure-alert").fadeTo(2000, 500).slideUp(500, function(){
         $("#failure-alert").slideUp(500);
     });
 }
 
+// showing the duplicate email message
 showDuplicateStatus = function() {
     $("#duplicate-alert").fadeTo(2000, 500).slideUp(500, function(){
         $("#duplicate-alert").slideUp(500);
     });
 }
 
+// checking the entered email (saving it in case it passed all checks), otherwise showing messages of failure
 submitEmail = function() {
 
     var email = document.getElementsByClassName('input-form-field')[0].value;

@@ -1,3 +1,5 @@
+
+// slogans to appear according to the recognized emotion
 const slogans =  [
     {
         "happy": [
