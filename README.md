@@ -6,7 +6,7 @@
     - `master` &rarr; since the initial plan was to analyze the emotion of the user and accordingly a gif is prompted using the api of gifhy. The code-base for such purpose is on the `master` branch, with the need of UI enhancement.
     - `no-gifs` &rarr; for GameChangers event, analyzng the emotion of the users and prompting them with movie quotes alongside with a tab to register users in such event was done on the `no-gifs` branch.
 
-## How to run
+## How to run (Development)
 
 - For both branches the emotion recognition platform needs a running server. Python was used in such case. `cd` to the folder containing the `index.html`.
 
