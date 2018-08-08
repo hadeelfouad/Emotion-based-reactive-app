@@ -2,7 +2,7 @@
 // SDK Needs to create video and canvas nodes in the DOM in order to function
 // Here we are adding those nodes a predefined div.
 let divRoot = $("#affdex_elements")[0];
-let width = 640;
+let width = 650;
 let height = 480;
 let faceMode = affdex.FaceDetectorMode.LARGE_FACES;
 let smiling = false;
@@ -33,6 +33,7 @@ function log(node_name, msg) {
 //function executes when Start button is pushed.
 function onStart() {
   if (detector && !detector.isRunning) {
+    $("#spinner1").css("display", "none");
     $("#logs").html("");
     detector.start();
   }
@@ -53,7 +54,6 @@ function onReset() {
   log('#logs', "Clicked the reset button");
   if (detector && detector.isRunning) {
     detector.reset();
-
     $('#results').html("");
   }
 };
