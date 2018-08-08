@@ -4,7 +4,7 @@ let slogansIndex = 0;
 renderGIF = function(searchKey) {
     
     let gifs;
-    let xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + searchKey + "&api_key=tAhiCMj64bRyq1EzaXsy0eyj6Om2QidE&limit=35");
+    let xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + searchKey + "&api_key=tAhiCMj64bRyq1EzaXsy0eyj6Om2QidE&limit=35&rating=PG");
     
     switch(searchKey) {
         case "happy":
@@ -33,14 +33,14 @@ renderGIF = function(searchKey) {
         index = Math.floor((Math.random() * 35));
 
         let img = document.createElement("img");
-        img.src = gifs.data[index].images.original.url;
-        img.width = 640;
+        img.id = "gif_result";
+        img.width = 400;
         img.height = 480;
+        img.src = gifs.data[index].images.original.url;
+        $("#spinner2").css("display", "none");
         let mainDiv = document.getElementById("gifs");
         emptyGIF();
         mainDiv.appendChild(img);
-        
-        
     });
 }
 

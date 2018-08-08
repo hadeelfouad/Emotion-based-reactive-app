@@ -1,34 +1,53 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <title>EmoRec App</title>
     </head>
-    <body>
-        <div class="container-fluid">
+    <body onload="onStart()">
+        <nav id="main_nav" class="navbar navbar-default navbar-expand-lg">
+            <a class="navbar-brand" href="#"><img style="width: 34px;" src="assets/images/Dell_Logo_Wht_rgb.png" alt="Image text"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link topnav" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="main" class="container">
+
             <div class="row">
-                <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px;"></div>
-                <div class="col-md-4">
-                    <div style="height:25em;">
-                        <strong>EMOTION TRACKING RESULTS</strong>
-                        <div id="results" style="word-wrap:break-word;" hidden></div>
+                
+                <div class="col-md-5" id="affdex_elements">
+                    <h1>Video Feed</h1>
+                    <div class="spinner" id="spinner1">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
                     </div>
-                    <div>
-                        <strong>DETECTOR LOG MSGS</strong>
-                    </div>
-                    <div id="logs"></div>
+                </div>
+                
+                <div class="col-md-5" id="gif_content">
+                        <div class="spinner" id="spinner2">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                        </div>
+                        <div class="row" id="gifs"></div>
                 </div>
             </div>
-            <div>
-                <button id="start" onclick="onStart()">Start</button>
-                <button id="stop" onclick="onStop()">Stop</button>
-                <button id="reset" onclick="onReset()">Reset</button>
+
+            <div class="row">
                 <div id="image">
                     <img src="" id="image__1" />
                 </div>
-            </div>
-            <div id="gifs">
-                <h1>First GIFs!</h1>
             </div>
         </div>
 
