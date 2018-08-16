@@ -20,7 +20,9 @@ renderGIF = function(searchKey) {
         case "fear":
             slogansIndex = 5; break;
         case "surprise":
-            slogansIndex = 6; break;
+            slogansIn
+            
+            dex = 6; break;
     }
 
     console.log("SLOGANS DATA: ", slogansData);
